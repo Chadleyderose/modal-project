@@ -12,7 +12,7 @@ export default {
     return{   
     title: 'My First Vue App :)',
     header:'Sign up fro the Give Aways!',
-    text: ' GraB your Swag for Hlf price'
+    text: ' GraB your Swag for half price'
     }
   }
 }
