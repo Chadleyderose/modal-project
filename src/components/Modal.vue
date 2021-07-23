@@ -1,8 +1,6 @@
 <template>
     <div class="backdrop" @click.self="closeModal">
         <div class="modal" :class="{sale: theme === sale}">
-            <h1>{{header}}</h1>
-            <p>{{text}}t</p>
         </div>
     </div>
 </template>
