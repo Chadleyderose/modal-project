@@ -1,6 +1,9 @@
 <template>
     <div class="backdrop" @click.self="closeModal">
-        <div class="modal" :class="{sale: theme === sale}">
+        <div class="modal" :class="{sale: theme === sale }">
+            <slot></slot>
+            <div class="actions"></div>
+            <slot name="links"></slot>
         </div>
     </div>
 </template>
@@ -39,11 +42,11 @@ export default {
     .modal p {
         font-style: normal;
     }
-    .modal.sale{
+    .modal .sale{
         background: crimson;
         color: white;
     }
-    .modal.sale h1{
+    .modal .sale h1{
        color: white; 
     }
 </style>
