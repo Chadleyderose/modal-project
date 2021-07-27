@@ -1,15 +1,17 @@
 <template>
     <div class="backdrop" @click.self="closeModal">
         <div class="modal" :class="{sale: theme === sale }">
-            <slot></slot>
-            <div class="actions"></div>
-            <slot name="links"></slot>
+            <slot>default content</slot>
+            <div class="Actions">
+               <slot name="links"></slot> 
+            </div>
+            
         </div>
     </div>
 </template>
 <script>
 export default {
-    props:['header', 'text', 'theme '],
+    props:[ 'theme '],
     methods:{
         closeModal(){
             this.$emit('close')
@@ -18,7 +20,7 @@ export default {
     }
 
 </script>
-<style scoped>
+<style >
 
     .modal{
         width: 400px;
@@ -27,14 +29,14 @@ export default {
         background: white;
         border-radius: 10px;
     }
-    .backdrop{
+    .backdrop {
         top: 0;
         position: fixed;
         background: rgba(0,0,0,0.5);
         width: 100%;
         height: 100%;
     }
-    h1{
+    .modal h1 {
         color: #03cfb4;
         border: none;
         padding: 0;
@@ -42,11 +44,29 @@ export default {
     .modal p {
         font-style: normal;
     }
-    .modal .sale{
+    .Actions {
+        text-align: center;
+        margin: 30px 0 10px 0;
+    }
+    .Actions a{
+        color: #333;
+        padding: 8px;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 10px;
+    }
+   .modal.sale{
         background: crimson;
         color: white;
     }
-    .modal .sale h1{
+    .modal.sale h1{
        color: white; 
+    }
+    .modal.sale.Actions{
+        color: white;
+    }
+    .modal.sale.Actions a{
+        color: white;
     }
 </style>

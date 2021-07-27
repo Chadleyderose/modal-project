@@ -1,22 +1,21 @@
 <template>
-<h1>{{title}}</h1>
+ <h1>{{title}}</h1>
 <p> welcome...</p>
-<div v-if="showModal">
-    <Modal theme="sale " @close="toggleModal">
+  <div v-if="showModal">
+    <Modal theme="sale" @close="toggleModal">
         <template v-slot:links>
             <a href="#">Sign up now</a>
             <a href="#">more info</a>
-
         </template>
         <h1>Ninja Givaway</h1>
         <p>Grab your Swag for half price</p>
     </Modal>
-</div>
-<button @click.alt="toggleModal">Open Modal(alt)</button>
+  </div>
+ <button @click.alt="toggleModal">Open Modal(alt)</button>
 </template>
 
 <script>
-import Modal from'./components/Modal'
+import Modal from'./components/Modal.vue'
 export default {
   name: 'App',
   components:{Modal},
